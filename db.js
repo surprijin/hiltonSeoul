@@ -87,6 +87,16 @@ function getpageByid(id, callback) {
   );
 }
 
+function login(id, callback) {
+  connection.query(
+    `SELECT id, pw FROM joinhilton WHERE id='${id}'`,
+    (err, row, fields) => {
+      if (err) throw err;
+      callback(row);
+    }
+  );
+}
+
 module.exports = {
     getAllinfo,
     insertJoinInfo,
@@ -95,5 +105,6 @@ module.exports = {
     getNoticeById,
     deleteNoticeById,
     updateNoticeById,
-    getpageByid
+    getpageByid,
+    login
   }
