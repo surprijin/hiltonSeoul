@@ -18,11 +18,22 @@
   font-size: 24px;
   padding: 10px 0;
 }
+.noti_px {
+  font-size: 26px;
+  padding: 10px 0;
+}
+.notice_btnw {
+  width: calc(100% + 8px);
+  display: flex;
+  justify-content: right;
+  padding: 15px 0;
+}
 #save {
   border: none;
   background-color: #19344d;
   color: white;
   padding: 15px;
+  margin-right: 10px;
 }
 #backbtn {
   border: none;

@@ -60,7 +60,17 @@
   border: 1px solid #494949;
   color: #494949;
 }
-
+.notice_btn1 {
+  display: flex;
+  justify-content: right;
+}
+.notice_btn1 > input {
+  background-color: #19344d;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  margin: 0 10px;
+}
 /* --------------------------------------------------------------- */
 @media only screen and (max-width: 768px) {
   .notice_deta_top > h4:nth-child(2) {

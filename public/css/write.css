@@ -18,6 +18,13 @@
   font-size: 24px;
   padding: 10px 0;
 }
+.noti_px {
+  font-size: 26px;
+  padding: 10px 0;
+}
+.btn_wrap2 {
+  display: flex;
+}
 #save {
   border: none;
   background-color: #19344d;

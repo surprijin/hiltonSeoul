@@ -1,24 +1,20 @@
-    <main>
-      <section>
-        <h2>공지사항 작성하기</h2>
+    <main>        
+      <figure class="notice_ban">
+      <h2>NOTICE</h2>
+  </figure>
+      <section class="noti_update">
+        <h2 class="noti_px">공지사항 작성하기</h2>
         <% if(typeof errs !== 'undefined') { %> 
           <% errs.forEach((err)=>{%>
             <h3><%=err.param%> : <%=err.msg%></h3>
           <% })%> 
         <% } %>
         <form method="POST" action="/hiltonWrite">
-          <table>
-            <tr>
-              <td><label>제목</label></td>
-              <td><input type="text" name="title"></td>
-            </tr>
-            <tr>
-              <td>내용 작성 :</td>
-              <td><textarea type="text" name="content"></textarea></td>
-            </tr>
-            <tr>
-              <td>항목 :</td>
-              <td>
+              <h2 class="noti_px">제목</h2>
+              <input type="text" name="title" class="title_number">
+              <p class="noti_px">내용 작성 :</p>
+              <input type="text" name="content" class="title_news"></input>
+              <p class="noti_px">항목 :</p>
                 <select name="noticeItem">
                   <option value="AMENITIES">AMENITIES</option>
                   <option value="SERVICE">SERVICE</option>
@@ -28,19 +24,13 @@
                   <option value="EVENT">EVENT</option>
                   <option value="PARKING">PARKING</option>
                 </selcet>
-              </td>
-            </tr>
-            <tr>
-              <td colspan="2">
                 <input type="submit" value="저장" id="save">
                 <input
                   type="button"
                   value="뒤로 가기"
                   onclick="javascript:location.href='/notice'"
+                  id="backbtn"
                 />
-              </td>
-            </tr>
-          </table>
         </form>
       </section>
     </main>

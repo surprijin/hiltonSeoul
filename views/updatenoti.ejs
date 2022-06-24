@@ -1,26 +1,29 @@
-
-  <body>
-    <h1>공지</h1>
+<body>
+  <figure class="notice_ban">
+    <h2>NOTICE</h2>
+  </figure>
+  <section class="noti_update">
+    <h1 class="noti_px">공지사항 수정</h1>
     <% if(typeof errs !== "undefined"){ %> <% errs.forEach((err)=>{%>
     <h4 style="color: red"><%=err.param%> : <%=err.msg%></h4>
     <% }) %> <% } %>
     <form method="POST" action="/updatenoti">
       <input type="hidden" name="id" value="<%=row.id%>" />
-      <p>정보</p>
+      <p class="noti_px">정보</p>
 
       <input name="title" class="title_number" value="<%=row.title%>" />
-      <p>컨텐츠</p>
+      <p class="noti_px">컨텐츠</p>
       <input name="content" class="title_news" value="<%=row.content%>" />
-      
-      <tr>
-        <td colspan="2">
-          <input type="submit" value="저장" id="save" />
-          <input
-            type="button"
-            value="뒤로 가기"
-            onclick="javascript:location.href='/notice'"
-          />
-        </td>
-      </tr>
+
+      <div class="notice_btnw">
+        <input type="submit" value="저장" id="save" />
+        <input
+          type="button"
+          value="뒤로 가기"
+          onclick="javascript:location.href='/notice'"
+          id="backbtn"
+        />
+      </div>
     </form>
-  </body>
+  </section>
+</body>
