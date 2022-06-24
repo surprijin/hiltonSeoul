@@ -34,8 +34,7 @@
   vertical-align: middle;
 }
 .rooms_btn button:hover {
-  transform: scale(1.1);
-  transition: 0.3s;
+  font-weight: bold;
 }
 
 .rooms_title {
