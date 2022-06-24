@@ -55,11 +55,11 @@ $.datepicker.setDefaults({
     $("#MainCheakIn").datepicker({
         minDate:0,
       onSelect: function(selected) {
-      $("#MainCheakOut").datepicker("option","minDate", selected)}
+      $("#main_OUT").datepicker("option","minDate", selected)}
       });
       
-      $("#MainCheakOut").datepicker({
+      $("#main_OUT").datepicker({
       onSelect: function(selected) {
-      $("#ResCheakIn").datepicker("option","maxDate", selected)}
+      $("#MainCheakIn").datepicker("option","maxDate", selected)}
       });
     
