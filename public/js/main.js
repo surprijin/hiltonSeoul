@@ -228,7 +228,7 @@ $.datepicker.setDefaults({
   yearSuffix: '년'
 });
 
-$("main_IN").datepicker({
+$("#main_IN").datepicker({
 minDate:0,
 onSelect: function(selected) {
 $("#main_OUT").datepicker("option","minDate", selected)}

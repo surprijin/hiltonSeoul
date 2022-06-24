@@ -44,31 +44,40 @@
       <span class="serch_ico"><a href=""></a></span>
     </span>
   </nav>
+ 
     <section class="notice_table">
+      <button class="notice_table_manager" type="button" value="새작성"
+      onclick="javascript:location.href='/write'"
+      style="float: right">관리자 작성페이지</button>
       <ul>
-        <p>공지사항</p>
           <li class="notice_table_top">
               <p style="width: 20%;">구분</p>
               <p style="width: 70%;">전체</p>
           </li>
       </ul>
-      <% rows.forEach((row, index)=>{ %>
       <ul class="notice_table_body">
-          <li class="noti_table_E6">
-              <p><%= row.noticeItem%></p>
-              <p>
-                <div onclick="javascript:location.href='/notice_deta?id=<%=row.id%>'">
-                <%= row.title%>
-                </div></p>
+        <% rows.forEach((row, index)=>{ %>
+        <li onclick="javascript:location.href='/notice_deta?id=<%=row.id%>'">
+          <p>
+            <%= row.id%>
+          </p>
+          <p>
+          <%= row.title%>
+          </p>
+          <div class="noti_botton">
+            <input
+              type="button"
+              onclick="javascript:location.href='/updatenoti?id=<%=row.id%>'"
+              value="수정"
+            />
+            <input
+              type="button"
+              onclick="javascript:location.href='/deletenoti?id=<%=row.id%>'"
+              value="삭제"
+            />
+          </div>
          </li>
-    <% }) %>
+         <% }) %>
+         <script src="../js/notice.js"></script>
   </section>
-  <button
-    type="button"
-    value="새작성"
-    onclick="javascript:location.href='/write'"
-    style="float: right"
-  >
-    글쓰기버튼
-  </button>
 </main>
