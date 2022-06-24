@@ -195,7 +195,93 @@ body {
     opacity: 90%;
 }
 /****/
-
+.reservation_1-1{
+    position: relative;
+    display: none;
+    width: 100%;
+    position: relative;
+    color: #494949;
+}
+.reservation_1-1::after{
+    content: "";
+    position: absolute;
+    bottom: 0; left: -30px;
+    width: calc(100% + 60px); height: 1px;
+    background-color: #B0AFAF;
+}
+.reservation_1-1 h5{
+    font-size: 16px;
+    padding-top: 36px;
+    padding-bottom: 5px;
+    box-sizing: border-box;
+}
+.reservation_1-1>div{
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 10px;
+    box-sizing: border-box;
+}
+.reservation_1-1>div>p{
+    font-size: 14px;
+    color: #494949;
+}
+.reservation_1-1>div>input{
+    cursor: pointer;
+    width: 94%;
+    font-size: 14px;
+    color: #494949;
+    font-family: 'Noto Serif KR', serif;
+    border: none;
+    outline: none;
+}
+.reservation_cal{
+    width: 20px; height: 20px;
+    background-size: 100% 100%;
+    background-position: center center;
+    background-image: url(../img/calendar.png);
+}
+#reservation_peo>p{
+    display: flex;
+}
+#reservation_peo>p>input{
+    width: 8%;
+    display: inline-block;
+    border: none; outline: none;
+    padding: 0; margin-left: 5px;
+    font-size: 14px;
+    font-family: 'Noto Serif KR', serif;
+    color: #494949;
+}
+.reservation_peo_img{
+    width: 20px; height: 20px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-image: url(../img/personal_pop.png);
+}
+.reservation_1>input{
+    width: 100%;
+    padding: 10px 15px;
+    margin: 10px 0;
+    box-sizing: border-box;
+    outline: none;
+    font-size: 14px;
+}
+.reservation_1>button{
+    cursor: pointer;
+    width: 100%;
+    background-color: #19344D;
+    border: none;
+    padding: 15px 0;
+    margin-bottom: 30px;
+    color: #fff;
+    outline: none; border: none;
+}
+.reservation_1>button:active{
+    opacity: 90%;
+}
+/******/
 .reservation_2{
     width: 871px;
 }
@@ -530,6 +616,9 @@ textarea{
 }
 
 @media screen and (max-width: 1200px) {
+    .reservation_ban{
+        margin-bottom: 0;
+    }
     .reservation{
         width: 100%;
         padding: 0 30px;
@@ -541,14 +630,18 @@ textarea{
     .reservation_2{
         width: 72%;
     }
+    .reservation_1-1{
+        display: flex;
+        margin-bottom: 100px;
+    }
 }
 @media screen and (max-width: 900px) {
-    .reservation_ban{
-        margin-bottom: 0;
-    }
     /**/
     .reservation_1{
         display: none;
+    }
+    .reservation_1-1{
+        margin-bottom: 0px;
     }
     /**/
     .reservation_2{

@@ -41,7 +41,6 @@ $.datepicker.setDefaults({
     //예약 페이지 달력
 
     $("#ResCheakIn").datepicker({
-        minDate:0,
         onSelect: function(selected) {
         $("#ResCheakOut").datepicker("option","minDate", selected)}
     });
@@ -51,15 +50,26 @@ $.datepicker.setDefaults({
         $("#ResCheakIn").datepicker("option","maxDate", selected)}
     });
 
+    //예약 모바일 페이지 달력
+
+    $("#ResCheakInM").datepicker({
+        onSelect: function(selected) {
+        $("#ResCheakOutM").datepicker("option","minDate", selected)}
+    });
+      
+    $("#ResCheakOutM").datepicker({
+        onSelect: function(selected) {
+        $("#ResCheakInM").datepicker("option","maxDate", selected)}
+    });
+
     //메인 페이지 달력
     $("#MainCheakIn").datepicker({
-        minDate:0,
       onSelect: function(selected) {
-      $("#main_OUT").datepicker("option","minDate", selected)}
+      $("#MainCheakOut").datepicker("option","minDate", selected)}
       });
       
-      $("#main_OUT").datepicker({
+      $("#MainCheakOut").datepicker({
       onSelect: function(selected) {
-      $("#MainCheakIn").datepicker("option","maxDate", selected)}
+      $("#ResCheakIn").datepicker("option","maxDate", selected)}
       });
     
