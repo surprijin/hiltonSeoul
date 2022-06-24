@@ -41,6 +41,7 @@ $.datepicker.setDefaults({
     //예약 페이지 달력
 
     $("#ResCheakIn").datepicker({
+        minDate:0,
         onSelect: function(selected) {
         $("#ResCheakOut").datepicker("option","minDate", selected)}
     });
@@ -52,6 +53,7 @@ $.datepicker.setDefaults({
 
     //메인 페이지 달력
     $("#MainCheakIn").datepicker({
+        minDate:0,
       onSelect: function(selected) {
       $("#MainCheakOut").datepicker("option","minDate", selected)}
       });
