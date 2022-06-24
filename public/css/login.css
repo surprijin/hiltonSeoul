@@ -50,8 +50,8 @@ main>.login_sec1440{
     
 }
 .member{
-    /* background-color: #19344D; */
-    color: black;
+    background-color: #19344D;
+    color: white;
 }
 
 .tab_wrapper{
@@ -170,6 +170,9 @@ main>.login_sec1440{
         width: 100%;
     }
     .tab_wrapper{
+        width: 100%;
+    }
+    .tab_wrapper2{
         width: 100%;
     }
 }
