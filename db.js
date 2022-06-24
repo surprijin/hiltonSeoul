@@ -6,7 +6,7 @@ const connection = mysql.createConnection({
     password : '18198778', //비밀번호
     port : '3306',
     database : 'heroku_48e6bf6cc59d377',
-    dateStrings: "date", //날짜 시간 출력
+    dateStrings: "date" //날짜 시간 출력
   });
 
   function getAllinfo(callback) {
