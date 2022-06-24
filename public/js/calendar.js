@@ -64,6 +64,7 @@ $.datepicker.setDefaults({
 
     //메인 페이지 달력
     $("#MainCheakIn").datepicker({
+        minDate:0,
       onSelect: function(selected) {
       $("#MainCheakOut").datepicker("option","minDate", selected)}
       });
