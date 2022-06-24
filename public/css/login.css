@@ -136,6 +136,35 @@ main>.login_sec1440{
 .tab_wrapper2{
     display: none;
 }
+
+.tab_wrapper2{
+    /* width: 100%; */
+    width: 500px;
+}
+.tab_wrapper2>div{
+    background-color: #FFFFFF;
+    padding: 20px 30px;
+    box-sizing: border-box;
+}
+.tab_wrapper2>div:nth-child(2){
+    padding-top: 0;
+}
+
+.tab_wrapper2>.login_icon>span>input{
+    width: 95%;
+    border: none;
+    padding: 20px;
+    box-sizing: border-box;
+}
+.tab_wrapper2>.pw_icon>span>input{
+    width: 95%;
+    border: none;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+
+
 @media only screen and (max-width: 1200px) {
     main>.login_sec1440{
         width: 100%;
