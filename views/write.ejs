@@ -1,0 +1,46 @@
+    <main>
+      <section>
+        <h2>공지사항 작성하기</h2>
+        <% if(typeof errs !== 'undefined') { %> 
+          <% errs.forEach((err)=>{%>
+            <h3><%=err.param%> : <%=err.msg%></h3>
+          <% })%> 
+        <% } %>
+        <form method="POST" action="/hiltonWrite">
+          <table>
+            <tr>
+              <td><label>제목</label></td>
+              <td><input type="text" name="title"></td>
+            </tr>
+            <tr>
+              <td>내용 작성 :</td>
+              <td><textarea type="text" name="content"></textarea></td>
+            </tr>
+            <tr>
+              <td>항목 :</td>
+              <td>
+                <select name="noticeItem">
+                  <option value="AMENITIES">AMENITIES</option>
+                  <option value="SERVICE">SERVICE</option>
+                  <option value="MEETING">MEETING</option>
+                  <option value="ROOMS">ROOMS</option>
+                  <option value="DINING">DINING</option>
+                  <option value="EVENT">EVENT</option>
+                  <option value="PARKING">PARKING</option>
+                </selcet>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2">
+                <input type="submit" value="저장" id="save">
+                <input
+                  type="button"
+                  value="뒤로 가기"
+                  onclick="javascript:location.href='/notice'"
+                />
+              </td>
+            </tr>
+          </table>
+        </form>
+      </section>
+    </main>

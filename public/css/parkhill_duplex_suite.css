@@ -1,0 +1,25 @@
+.topimg {
+  width: 100%;
+  background: url(../img/parkhill-suite-bedroom.png);
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+.topimg::before {
+  background-color: rgba(0, 0, 0, 0.3);
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  content: " ";
+}
+
+.img_origin {
+  height: 850px;
+  background: url(../img/parkhill-suite-bedroom.png);
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  margin: auto;
+}
