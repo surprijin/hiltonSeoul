@@ -166,4 +166,89 @@ function openCloseToc34() {
     document.getElementById('option3-4').style.display = 'block';
   }
 };
+/////////////달력///////////////
+$.datepicker.setDefaults({
+  dateFormat: 'yy-mm-dd',
+  prevText: '이전 달',
+  nextText: '다음 달',
+  monthNames: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
+  monthNamesShort: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
+  dayNames: ['일', '월', '화', '수', '목', '금', '토'],
+  dayNamesShort: ['일', '월', '화', '수', '목', '금', '토'],
+  dayNamesMin: ['일', '월', '화', '수', '목', '금', '토'],
+  showMonthAfterYear: true,
+  yearSuffix: '년'
+});
+
+$("#main_IN").datepicker({
+minDate:0,
+onSelect: function(selected) {
+$("#main_OUT").datepicker("option","minDate", selected)}
+});
+
+$("#main_OUT").datepicker({
+onSelect: function(selected) {
+$("#main_IN").datepicker("option","maxDate", selected)}
+});
+//////////////////인원카운트//////////////////////
+
+function resAdult(type)  {
+  const resultElement = document.querySelector('#resAdultResult');
+
+  let number = resultElement.innerText;
+
+  if(type === 'plus') {
+    number = parseInt(number) + 1;
+  }else if(type === 'minus' && number>0)  {
+    number = parseInt(number) - 1;
+  }
+  resultElement.innerText = number;
+}
+
+function resChild(type)  {
+  const resultElement = document.querySelector('#resChildResult');
+  
+  let number = resultElement.innerText;
+
+  if(type === 'plus') {
+    number = parseInt(number) + 1;
+  }else if(type === 'minus' && number>0)  {
+    number = parseInt(number) - 1;
+  }
+
+  resultElement.innerText = number;
+}
+function printName()  {
+  const name1 = document.getElementById('resAdultResult').innerText;
+  document.getElementById("valueInputA").value = name1;
+  const name2 = document.getElementById('resChildResult').innerText;
+  document.getElementById("valueInputC").value = name2;
+  document.getElementById('reservation_1_men').style.display = "none";
+}
+
+////TOP JS//////////
+var locationSidebar = document.getElementById("location_side");
+window.onscroll = function () {
+  scrollFunction();
+};
+
+locationSidebar.style.display = "none";
+
+function scrollFunction() {
+
+  if (
+    document.body.scrollTop > 200 ||
+    document.documentElement.scrollTop > 200
+  ) {
+    locationSidebar.style.display = "flex";
+  } else {
+    locationSidebar.style.display = "none";
+  }
+}
+
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+
 

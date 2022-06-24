@@ -33,6 +33,10 @@
   background: #ccc;
   vertical-align: middle;
 }
+.rooms_btn button:hover {
+  transform: scale(1.1);
+  transition: 0.3s;
+}
 
 .rooms_title {
   width: 100%;
@@ -99,7 +103,7 @@
 }
 .room_detail_w:hover {
   background-color: #eeece7;
-  color: #494949;
+  color: #000000;
 }
 .room_detail_b {
   width: 90px;
@@ -192,7 +196,7 @@
 
 /* ---------------------------------------------------------suite */
 
-.parkhill_duplex_img {
+.parkhill_duplex_suite_r {
   background-image: url(../img/parkhill-suite-bedroom.png);
   background-repeat: no-repeat;
   background-size: cover;
@@ -224,7 +228,7 @@
   max-width: 1440px;
   height: 650px;
 }
-.nam_duplex_img {
+.nam_duplex_suite_img {
   background-image: url(../img/namdaemun-suite-living-room.png);
   background-repeat: no-repeat;
   background-size: cover;

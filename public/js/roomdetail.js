@@ -63,13 +63,13 @@ window.onclick = function (event) {
 
 function shareTwitter() {
   var sendText = "방 리스트"; // 전달할 텍스트
-  var sendUrl = "/room"; // 전달할 URL
+  var sendUrl = "room"; // 전달할 URL
   window.open(
     "https://twitter.com/intent/tweet?text=" + sendText + "&url=" + sendUrl
   );
 }
 function shareFacebook() {
-  var sendUrl = "/room"; // 전달할 URL
+  var sendUrl = "room"; // 전달할 URL
   window.open("http://www.facebook.com/sharer/sharer.php?u=" + sendUrl);
 }
 function shareKakao() {

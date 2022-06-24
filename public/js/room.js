@@ -56,8 +56,8 @@ sidebar.style.display = "none";
 
 function scrollFunction() {
   if (
-    document.body.scrollTop > 1000 ||
-    document.documentElement.scrollTop > 1000
+    document.body.scrollTop > 500 ||
+    document.documentElement.scrollTop > 500
   ) {
     sidebar.style.display = "flex";
   } else {

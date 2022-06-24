@@ -9,10 +9,19 @@
     <% }) %> <% } %>
     <form method="POST" action="/updatenoti">
       <input type="hidden" name="id" value="<%=row.id%>" />
-      <p class="noti_px">정보</p>
-
+      <p class="noti_px">제목</p>
       <input name="title" class="title_number" value="<%=row.title%>" />
-      <p class="noti_px">컨텐츠</p>
+      <p class="noti_px">항목 :</p>
+      <select name="noticeItem">
+        <option value="AMENITIES">AMENITIES</option>
+        <option value="SERVICE">SERVICE</option>
+        <option value="MEETING">MEETING</option>
+        <option value="ROOMS">ROOMS</option>
+        <option value="DINING">DINING</option>
+        <option value="EVENT">EVENT</option>
+        <option value="PARKING">PARKING</option>
+      </selcet>
+      <p class="noti_px">내용작성</p>
       <input name="content" class="title_news" value="<%=row.content%>" />
 
       <div class="notice_btnw">

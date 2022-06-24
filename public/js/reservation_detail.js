@@ -192,3 +192,28 @@ function ResForm() {
     location.href = "/";
   }
 }
+
+////TOP JS//////////
+var locationSidebar = document.getElementById("location_side");
+window.onscroll = function () {
+  scrollFunction();
+};
+
+locationSidebar.style.display = "none";
+
+function scrollFunction() {
+
+  if (
+    document.body.scrollTop > 200 ||
+    document.documentElement.scrollTop > 200
+  ) {
+    locationSidebar.style.display = "flex";
+  } else {
+    locationSidebar.style.display = "none";
+  }
+}
+
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}

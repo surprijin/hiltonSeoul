@@ -6,15 +6,15 @@
             <article class="reservation_1">
                 <h5>밀레니엄 힐튼 서울</h5>
                 <div>
-                    <p>2022-05-24</p>
+                    <input id="ResCheakIn" value="2022-05-24" readonly></input>
                     <span class="reservation_cal"></span>
                 </div>
                 <div>
-                    <p>2022-05-24</p>
+                    <input id="ResCheakOut" value="2022-05-24" readonly></input>
                     <span class="reservation_cal"></span>
                 </div>
                 <div id = reservation_peo onclick="openCloseToc1()">
-                    <p>객실 1 / 성인 2 / 어린이 0</p>
+                    <p>성인 <input id="valueInputA" value="2"> / 어린이 <input id="valueInputC" value="0"></p>
                     <span class="reservation_peo_img">
                     </span>
                 </div>
@@ -27,23 +27,19 @@
                     <p>E-mail. seoul@hilton.com</p>
                 </span>
                 <ul id="reservation_1_men">
-                    <li>
-                        <h6>ADULT</h6>
-                        <span class="reservation_mi">
-                        </span>
-                        <h6>2</h6>
-                        <span class="reservation_pl">
-                        </span>
+                    <li id="">
+                        <h6>성인</h6>
+                        <input type="button" class="minus reservation_mi" onclick="resAdult('minus')">
+                        <p id="resAdultResult">2</p>
+                        <input type="button" class="plus reservation_pl" onclick="resAdult('plus')">
                     </li>
                     <li>
-                        <h6>KID</h6>
-                        <span class="reservation_mi">
-                        </span>
-                        <h6>2</h6>
-                        <span class="reservation_pl">
-                        </span>
+                        <h6>어린이</h6>
+                        <input type="button" class="minus reservation_mi" onclick="resChild('minus')">
+                        <p id="resChildResult">0</p>
+                        <input type="button" class="plus reservation_pl" onclick="resChild('plus')">
                     </li>
-                    <li><button onclick="openCloseToc1()">완료</button></li>
+                    <li><button id="resClear" onclick="printName()">완료</button></li>
                 </ul>
             </article>
             <article class="reservation_2">
@@ -92,7 +88,8 @@
                                         <h6>(1박/1객실)</h6>
                                         <p>KWR <span>270,500~</span></p>
                                         <span id="reservation_selection" 
-                                        onclick="openCloseToc11()">요금보기</span>
+                                        onclick="openCloseToc11()" >
+                                        요금보기</span>
                                     </div>
                                 </li>
                                 <li id="option1-1" class="option">
@@ -157,7 +154,7 @@
                                                     <p>총 예상 금액</p>
                                                     <p>KRW 327,305</p>
                                                 </div>
-                                                <span><a href="">
+                                                <span><a href="reservation_detail">
                                                     예약하기
                                                 </a></span>
                                             </span>
@@ -264,7 +261,7 @@
                                                     <p>총 예상 금액</p>
                                                     <p>KRW 339,405</p>
                                                 </div>
-                                                <span><a href="">
+                                                <span><a href="reservation_detail">
                                                     예약하기
                                                 </a></span>
                                             </span>
@@ -361,7 +358,7 @@
                                                     <p>총 예상 금액</p>
                                                     <p>KRW 401,115</p>
                                                 </div>
-                                                <span><a href="">
+                                                <span><a href="reservation_detail">
                                                     예약하기
                                                 </a></span>
                                             </span>
@@ -468,7 +465,7 @@
                                                     <p>총 예상 금액</p>
                                                     <p>KRW 544,500</p>
                                                 </div>
-                                                <span><a href="">
+                                                <span><a href="reservation_detail">
                                                     예약하기
                                                 </a></span>
                                             </span>
@@ -584,7 +581,7 @@
                                                     <p>총 예상 금액</p>
                                                     <p>KRW 327,305</p>
                                                 </div>
-                                                <span><a href="">
+                                                <span><a href="reservation_detail">
                                                     예약하기
                                                 </a></span>
                                             </span>
@@ -691,7 +688,7 @@
                                                     <p>총 예상 금액</p>
                                                     <p>KRW 339,405</p>
                                                 </div>
-                                                <span><a href="">
+                                                <span><a href="reservation_detail">
                                                     예약하기
                                                 </a></span>
                                             </span>
@@ -788,7 +785,7 @@
                                                     <p>총 예상 금액</p>
                                                     <p>KRW 401,115</p>
                                                 </div>
-                                                <span><a href="">
+                                                <span><a href="reservation_detail">
                                                     예약하기
                                                 </a></span>
                                             </span>
@@ -895,7 +892,7 @@
                                                     <p>총 예상 금액</p>
                                                     <p>KRW 544,500</p>
                                                 </div>
-                                                <span><a href="">
+                                                <span><a href="reservation_detail">
                                                     예약하기
                                                 </a></span>
                                             </span>
@@ -1010,7 +1007,7 @@
                                                     <p>총 예상 금액</p>
                                                     <p>KRW 327,305</p>
                                                 </div>
-                                                <span><a href="">
+                                                <span><a href="reservation_detail">
                                                     예약하기
                                                 </a></span>
                                             </span>
@@ -1117,7 +1114,7 @@
                                                     <p>총 예상 금액</p>
                                                     <p>KRW 339,405</p>
                                                 </div>
-                                                <span><a href="">
+                                                <span><a href="reservation_detail">
                                                     예약하기
                                                 </a></span>
                                             </span>
@@ -1214,7 +1211,7 @@
                                                     <p>총 예상 금액</p>
                                                     <p>KRW 401,115</p>
                                                 </div>
-                                                <span><a href="">
+                                                <span><a href="reservation_detail">
                                                     예약하기
                                                 </a></span>
                                             </span>
@@ -1321,7 +1318,7 @@
                                                     <p>총 예상 금액</p>
                                                     <p>KRW 544,500</p>
                                                 </div>
-                                                <span><a href="">
+                                                <span><a href="reservation_detail">
                                                     예약하기
                                                 </a></span>
                                             </span>
@@ -1333,6 +1330,9 @@
                     </li>
                 </ul>
             </article>
+            <div class="fix_btn" id="location_side">
+                <button onclick="topFunction()">TOP</button>
+            </div>
         </section>
     </main>
     <script src="../js/reservation.js"></script>

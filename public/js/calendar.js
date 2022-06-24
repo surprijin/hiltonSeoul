@@ -37,4 +37,27 @@ $.datepicker.setDefaults({
         onSelect: function(selected) {
         $("#e_date_start").datepicker("option","maxDate", selected)}
     });
+
+    //예약 페이지 달력
+
+    $("#ResCheakIn").datepicker({
+        onSelect: function(selected) {
+        $("#ResCheakOut").datepicker("option","minDate", selected)}
+    });
+      
+    $("#ResCheakOut").datepicker({
+        onSelect: function(selected) {
+        $("#ResCheakIn").datepicker("option","maxDate", selected)}
+    });
+
+    //메인 페이지 달력
+    $("#MainCheakIn").datepicker({
+      onSelect: function(selected) {
+      $("#MainCheakOut").datepicker("option","minDate", selected)}
+      });
+      
+      $("#MainCheakOut").datepicker({
+      onSelect: function(selected) {
+      $("#ResCheakIn").datepicker("option","maxDate", selected)}
+      });
     

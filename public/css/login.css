@@ -42,6 +42,7 @@ main>.login_sec1440{
     border-bottom: 1px solid lightgray;
 }
 .l_inner>.login_wrap>li{
+    cursor: pointer;
     width: 50%;
     text-align: center;
     padding: 30px;
@@ -132,7 +133,9 @@ main>.login_sec1440{
 .l_txt>p>a{
     color:#494949;
 }
-
+.tab_wrapper2{
+    display: none;
+}
 @media only screen and (max-width: 1200px) {
     main>.login_sec1440{
         width: 100%;

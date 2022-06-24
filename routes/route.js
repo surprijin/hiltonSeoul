@@ -68,7 +68,6 @@ router.get("/twin_guest_room", (req, res) => {
 router.get("/vista_duplex_suite", (req, res) => {
   res.render("vista_duplex_suite");
 });
-
 router.get("/location", (req, res) => {
   res.render("location");
 });
@@ -226,28 +225,6 @@ router.get('/notice_deta', function(req, res) {
           res.render('notice_deta',{row:row[0]});
       }
   });
-});
-
-
-router.post('/login', function(request, response) {
-  var username = request.body.id;
-  var password = request.body.pw;
-  if (username && password) {
-      connection.query('SELECT id,pw FROM joinhilton WHERE id = ? AND pw = ?', [id, pw], function(error, results, fields) {
-          if (error) throw error;
-          if (results.length > 0) {
-              request.session.loggedin = true;
-              request.session.id = id;
-              response.redirect('/');
-              response.end();
-          } else {              
-              response.send('<script type="text/javascript">alert("로그인 정보가 일치하지 않습니다."); document.location.href="/login";</script>');    
-          }            
-      });
-  } else {        
-      response.send('<script type="text/javascript">alert("username과 password를 입력하세요!"); document.location.href="/login";</script>');    
-      response.end();
-  }
 });
 
 module.exports = router;
