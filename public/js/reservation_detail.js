@@ -162,19 +162,23 @@ function ResCheck() {
     location.href = "/";
   }
 }
-
-
-$(".rf_terms").on("click", "#chk01", function () {
-  var checked = $(this).is(":checked");
-
-  if (checked) {
-    $(this).parents(".rf_terms").find("input").prop("checked", true);
-  } else {
-    $(this).parents(".rf_terms").find("input").prop("checked", false);
-  }
+// 동의 모두선택 / 해제
+$(document).ready(function() {
+  $("#chk01").click(function() {
+    if($("#chk01").is(":checked")) $("input[name=cagree]").prop("checked", true);
+    else $("input[name=cagree]").prop("checked", false);
+  });
+  
+  $("input[name=cagree]").click(function() {
+    var total = $("input[name=cagree]").length;
+    var checked = $("input[name=cagree]:checked").length;
+    
+    if(total != checked) $("#chk01").prop("checked", false);
+    else $("#chk01").prop("checked", true); 
+  });
 });
 
-
+// 개인정보 동의 유효성
 var ResBtn = document.querySelector("#ResBtn");
 ResBtn.addEventListener("click", ResForm);
 
@@ -193,6 +197,7 @@ function ResForm() {
   }
 }
 
+
 ////TOP JS//////////
 var locationSidebar = document.getElementById("location_side");
 window.onscroll = function () {
@@ -202,7 +207,6 @@ window.onscroll = function () {
 locationSidebar.style.display = "none";
 
 function scrollFunction() {
-
   if (
     document.body.scrollTop > 200 ||
     document.documentElement.scrollTop > 200
