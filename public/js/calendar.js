@@ -53,6 +53,7 @@ $.datepicker.setDefaults({
     //예약 모바일 페이지 달력
 
     $("#ResCheakInM").datepicker({
+        minDate:0,
         onSelect: function(selected) {
         $("#ResCheakOutM").datepicker("option","minDate", selected)}
     });

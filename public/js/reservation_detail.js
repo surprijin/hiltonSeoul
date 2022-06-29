@@ -131,6 +131,7 @@ function ResCheck() {
   } else if (eNameL.value == "") {
     alert("영문명(성)을 입력하세요.");
     return false;
+    
   } else if (email_id.value == "") {
     alert("이메일 주소를 입력하세요.");
     return false;

@@ -1,12 +1,12 @@
 const mysql = require('mysql');
 
 const connection = mysql.createConnection({
-    host : 'us-cdbr-east-05.cleardb.net',
-    user : 'b23c4dfa23beb6', 
-    password : '18198778',
+    host : '@us-cdbr-east-05.cleardb.net',
+    user : 'b23c4dfa23beb6', //ID
+    password : '18198778', //비밀번호
     port : '3306',
     database : 'heroku_48e6bf6cc59d377',
-    dateStrings: "date"
+    dateStrings: "date" //날짜 시간 출력
   });
 
   function getAllinfo(callback) {
@@ -39,7 +39,7 @@ function getAllNotice(callback) {
 function insertNotice(title, content, noticeItem, callback) {
   connection.query(
     `INSERT INTO notice(title, content, noticeItem) VALUES
-    ('${title}','${content}', '${noticeItem}')`,
+    ("${title}","${content}", "${noticeItem}")`,
     (err, result) => {
       if (err) throw err;
       callback();
@@ -61,7 +61,7 @@ function getNoticeById(id, callback) {
 //리스트를 수정하고 싶을때 id값이 일치하는 부분을 수정하는 함수
 function updateNoticeById(id, title, content, noticeItem, callback) {
   connection.query(
-    `UPDATE notice SET content='${content}', title='${title}', datetime=NOW(), noticeItem='${noticeItem}' WHERE id='${id}'`,
+    `UPDATE notice SET content="${content}", title="${title}", datetime=NOW(), noticeItem="${noticeItem}" WHERE id="${id}"`,
     (err, result) => {
       if (err) throw err;
       callback();
@@ -87,7 +87,7 @@ function getpageByid(id, callback) {
   );
 }
 
-function getlogin(id, callback) {
+function getlogin(id,callback) {
   connection.query(
     `SELECT id, pw FROM joinhilton WHERE id='${id}'`,
     (err, row, fields) => {

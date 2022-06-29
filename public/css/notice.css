@@ -114,24 +114,30 @@ body {
     background-image: url(../img/search_FILL0_wght700_GRAD0_opsz48.png);
 }
 /******/
-.notice_table{
-    position: relative;
+.notice_button{
+    display: flex;
+    justify-content: flex-end;
     width: 1200px;
     margin: auto;
-    padding-top: 50px;
-    padding-bottom: 100px;
+    padding: 8px 0;
 }
 .notice_table_manager{
     cursor: pointer;
-    position: absolute;
     font-family: initial;
-    right: 0; top: 70px;
     padding: 8px 30px;
     background-color: #000;
     color: #fff;
     border: none;
     border-radius: 5px;
 }
+/******/
+.notice_table{
+    position: relative;
+    width: 1200px;
+    margin: auto;
+    padding-bottom: 100px;
+}
+
 .noti_botton{
     z-index: 99;
     position: absolute;
@@ -214,9 +220,15 @@ body {
         padding: 0 30px;
         box-sizing: border-box;
     }
+    .notice_button{
+        width: 100%;
+        padding: 0 30px;
+        box-sizing: border-box;
+    }
     .notice_table{
         width: 100%;
-        padding: 25px 30px;
+        padding: 0 30px;
+        padding-bottom: 25px;
         box-sizing: border-box;
     }
 }

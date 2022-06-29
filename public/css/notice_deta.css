@@ -48,6 +48,7 @@
   font-size: 14px;
   color: #494949;
 }
+
 /**/
 .notice_deta_bottom {
   display: flex;
@@ -59,6 +60,12 @@
   padding: 8px 30px;
   border: 1px solid #494949;
   color: #494949;
+  border-radius: 2px;
+  transition: 0.3s;
+}
+.notice_deta_bottom > a :hover {
+  background-color: rgb(118, 118, 118);
+  color: white;
 }
 .notice_btn1 {
   display: flex;
@@ -70,6 +77,7 @@
   border: none;
   padding: 10px 20px;
   margin: 0 10px;
+  border-radius: 2px;
 }
 /* --------------------------------------------------------------- */
 @media only screen and (max-width: 768px) {

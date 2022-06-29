@@ -6,6 +6,14 @@ function openCloseToc1() {
     document.getElementById('reservation_1_men').style.display = 'block';
   }
 };
+////인원 띄우기
+function openCloseToc1M() {
+  if(document.getElementById('reservation_11_men').style.display === 'block') {
+    document.getElementById('reservation_11_men').style.display = 'none';
+  } else {
+    document.getElementById('reservation_11_men').style.display = 'block';
+  }
+};
 
 
 // ////아코디언 하나만////
@@ -37,7 +45,6 @@ function openCloseToc1() {
 
 ////객실선택 띄우기(룸온니)
 
-var roomonly = document.getElementById('rooms_content_1').style.display;
 function ROOMONLY() {
   if(document.getElementById('rooms_content_1').style.display === 'block') {
     document.getElementById('rooms_content_1').style.display = 'none';
@@ -225,17 +232,47 @@ function printName()  {
   document.getElementById("valueInputC").value = name2;
   document.getElementById('reservation_1_men').style.display = "none";
 }
+//////////////////인원카운트M//////////////////////
+function resAdult2(type)  {
+  const resultElement = document.querySelector('#resAdultResult2');
 
-////TOP JS//////////
+  let number = resultElement.innerText;
+
+  if(type === 'plus2') {
+    number = parseInt(number) + 1;
+  }else if(type === 'minus2' && number>0)  {
+    number = parseInt(number) - 1;
+  }
+  resultElement.innerText = number;
+}
+
+function resChild2(type)  {
+  const resultElement = document.querySelector('#resChildResult2');
+  
+  let number = resultElement.innerText;
+
+  if(type === 'plus2') {
+    number = parseInt(number) + 1;
+  }else if(type === 'minus2' && number>0)  {
+    number = parseInt(number) - 1;
+  }
+
+  resultElement.innerText = number;
+}
+function printName2()  {
+  const name1 = document.getElementById('resAdultResult2').innerText;
+  document.getElementById("valueInputAM").value = name1;
+  const name2 = document.getElementById('resChildResult2').innerText;
+  document.getElementById("valueInputCM").value = name2;
+  document.getElementById('reservation_11_men').style.display = "none";
+}
+////TOP으로 이동하는 JS//////////
 var locationSidebar = document.getElementById("location_side");
 window.onscroll = function () {
   scrollFunction();
 };
-
 locationSidebar.style.display = "none";
-
 function scrollFunction() {
-
   if (
     document.body.scrollTop > 200 ||
     document.documentElement.scrollTop > 200
@@ -245,7 +282,6 @@ function scrollFunction() {
     locationSidebar.style.display = "none";
   }
 }
-
 function topFunction() {
   document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;

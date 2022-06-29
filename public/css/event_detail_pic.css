@@ -24,7 +24,7 @@
 .event_img{
     width: 100%;
     margin: auto;
-    background-image: url(../img/picnic-gf53515dda_1920.jpg);
+    background-image: url(../Img/picnic-gf53515dda_1920.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-size:cover;
@@ -146,16 +146,23 @@
     margin: 50px 0;
 }
 .e_detail_more>div>button{
+    cursor: pointer;
     display: block;
-    padding:8px 30px;
+    padding: 8px 30px;
     box-sizing: border-box;
+    background-color: transparent;
+    color: #494949;
+    border: 1px solid rgb(118, 118, 118);
+    text-align: center;
+    border-radius: 2px;
+    transition: 0.3s;
     margin: auto;
-    border: 1px solid #B0AFAF;
-    background-color: white;
 }
 .e_detail_more>div>button:hover{
-    opacity: 80%;
+    color: #fff;
+    background-color: rgb(118, 118, 118);
 }
+
 
 /***************반응형 ***************/
 

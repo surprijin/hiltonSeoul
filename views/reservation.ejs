@@ -20,7 +20,7 @@
                 </div>
                 <h5>프로모션 코드</h5>
                 <input type="text" placeholder="CODE NUMBER"><br>
-                <button type="submit">검색</button>
+                <button type="submit">SEARCH</button>
                 <span class="reservation_inquiry">
                     <h6>예약문의</h6>
                     <p>TEL. +82-2-753-7788</p>
@@ -51,18 +51,34 @@
                     <input id="ResCheakOutM" value="2022-06-24" readonly></input>
                     <span class="reservation_cal"></span>
                 </div>
-                <div id = reservation_peo>
-                    <p>성인 <input id="valueInputA" value="2" readonly> / 어린이 <input id="valueInputC" value="0"></p>
+                <div id = reservation_peo onclick="openCloseToc1M()">
+                    <p>성인 <input id="valueInputAM" value="2" readonly> / 어린이 <input id="valueInputCM" value="0" readonly></p>
                     <span class="reservation_peo_img">
                     </span> 
                 </div>
+                <ul id="reservation_11_men">
+                    <li id="">
+                        <h6>성인</h6>
+                        <input type="button" class="minus2 reservation_mi" onclick="resAdult2('minus2')">
+                        <p id="resAdultResult2">2</p>
+                        <input type="button" class="plus2 reservation_pl" onclick="resAdult2('plus2')">
+                    </li>
+                    <li>
+                        <h6>어린이</h6>
+                        <input type="button" class="minus2 reservation_mi" onclick="resChild2('minus2')">
+                        <p id="resChildResult2">0</p>
+                        <input type="button" class="plus2 reservation_pl" onclick="resChild2('plus2')">
+                    </li>
+                    <li><button id="resClear" onclick="printName2()">완료</button></li>
+                </ul>
             </article>
             <article class="reservation_2">
                 <div class="reservation_top">
                     <h3>객실 & 옵션선택</h3>
                     <ul class="reservation_ing">
-                        <li>1</li>
+                        <li class="reservation_ingB">1</li>
                         <li>2</li>
+                        <li>3</li>
                     </ul>
                     <div class="reservation_2_gray"></div>
                 </div>
@@ -76,7 +92,7 @@
                             <div class="reservation_roomsR">
                                 <h6>(1박/1객실)</h6>
                                 <p>KWR <span>270,500~</span></p>
-                                <span id="reservation_selection" onclick="ROOMONLY()">객실선택</span>   
+                                <span id="reservation_selection" onclick="ROOMONLY()">SELECT</span>   
                             </div>
                         </div>
                         <span class="rooms_content" id="rooms_content_1">
@@ -104,7 +120,7 @@
                                         <p>KWR <span>270,500~</span></p>
                                         <span id="reservation_selection" 
                                         onclick="openCloseToc11()" >
-                                        요금보기</span>
+                                        PRICE</span>
                                     </div>
                                 </li>
                                 <li id="option1-1" class="option">
@@ -169,8 +185,8 @@
                                                     <p>총 예상 금액</p>
                                                     <p>KRW 327,305</p>
                                                 </div>
-                                                <span><a href="reservation_detail">
-                                                    예약하기
+                                                <span><a href="reservation2">
+                                                    BOOK
                                                 </a></span>
                                             </span>
                                         </li>
@@ -210,7 +226,7 @@
                                         <h6>(1박/1객실)</h6>
                                         <p>KWR <span>280,500~</span></p>
                                         <span id="reservation_selection" onclick="openCloseToc12()">
-                                            요금보기
+                                            PRICE
                                         </span>
                                     </div>
                                 </li>
@@ -276,8 +292,8 @@
                                                     <p>총 예상 금액</p>
                                                     <p>KRW 339,405</p>
                                                 </div>
-                                                <span><a href="reservation_detail">
-                                                    예약하기
+                                                <span><a href="reservation2">
+                                                    BOOK
                                                 </a></span>
                                             </span>
                                         </li>
@@ -307,7 +323,7 @@
                                         <h6>(1박/1객실)</h6>
                                         <p>KWR <span>331,500~</span></p>
                                         <span id="reservation_selection" onclick="openCloseToc13()">
-                                            요금보기
+                                            PRICE
                                         </span>
                                     </div>
                                 </li>
@@ -373,8 +389,8 @@
                                                     <p>총 예상 금액</p>
                                                     <p>KRW 401,115</p>
                                                 </div>
-                                                <span><a href="reservation_detail">
-                                                    예약하기
+                                                <span><a href="reservation2">
+                                                    BOOK
                                                 </a></span>
                                             </span>
                                         </li>
@@ -414,7 +430,7 @@
                                         <h6>(1박/1객실)</h6>
                                         <p>KWR <span>430,000~</span></p>
                                         <span id="reservation_selection" onclick="openCloseToc14()">
-                                            요금보기
+                                            PRICE
                                         </span>
                                     </div>
                                 </li>
@@ -480,8 +496,8 @@
                                                     <p>총 예상 금액</p>
                                                     <p>KRW 544,500</p>
                                                 </div>
-                                                <span><a href="reservation_detail">
-                                                    예약하기
+                                                <span><a href="reservation2">
+                                                    BOOK
                                                 </a></span>
                                             </span>
                                         </li>
@@ -503,7 +519,7 @@
                                 <h6>(1박/1객실)</h6>
                                 <p>KWR <span>430,000~</span></p>
                                 <span id="reservation_selection" onclick="BREAKFAST()">
-                                    객실선택
+                                    SELECT
                                 </span>
                             </div>
                         </div>
@@ -531,7 +547,7 @@
                                         <h6>(1박/1객실)</h6>
                                         <p>KWR <span>270,500~</span></p>
                                         <span id="reservation_selection" 
-                                        onclick="openCloseToc21()">요금보기</span>
+                                        onclick="openCloseToc21()">PRICE</span>
                                     </div>
                                 </li>
                                 <li id="option2-1" class="option">
@@ -596,8 +612,8 @@
                                                     <p>총 예상 금액</p>
                                                     <p>KRW 327,305</p>
                                                 </div>
-                                                <span><a href="reservation_detail">
-                                                    예약하기
+                                                <span><a href="reservation2">
+                                                    BOOK
                                                 </a></span>
                                             </span>
                                         </li>
@@ -637,7 +653,7 @@
                                         <h6>(1박/1객실)</h6>
                                         <p>KWR <span>280,500~</span></p>
                                         <span id="reservation_selection" onclick="openCloseToc22()">
-                                            요금보기
+                                            PRICE
                                         </span>
                                     </div>
                                 </li>
@@ -703,8 +719,8 @@
                                                     <p>총 예상 금액</p>
                                                     <p>KRW 339,405</p>
                                                 </div>
-                                                <span><a href="reservation_detail">
-                                                    예약하기
+                                                <span><a href="reservation2">
+                                                    BOOK
                                                 </a></span>
                                             </span>
                                         </li>
@@ -734,7 +750,7 @@
                                         <h6>(1박/1객실)</h6>
                                         <p>KWR <span>331,500~</span></p>
                                         <span id="reservation_selection" onclick="openCloseToc23()">
-                                            요금보기
+                                            PRICE
                                         </span>
                                     </div>
                                 </li>
@@ -800,8 +816,8 @@
                                                     <p>총 예상 금액</p>
                                                     <p>KRW 401,115</p>
                                                 </div>
-                                                <span><a href="reservation_detail">
-                                                    예약하기
+                                                <span><a href="reservation2">
+                                                    BOOK
                                                 </a></span>
                                             </span>
                                         </li>
@@ -841,7 +857,7 @@
                                         <h6>(1박/1객실)</h6>
                                         <p>KWR <span>430,000~</span></p>
                                         <span id="reservation_selection" onclick="openCloseToc24()">
-                                            요금보기
+                                            PRICE
                                         </span>
                                     </div>
                                 </li>
@@ -907,8 +923,8 @@
                                                     <p>총 예상 금액</p>
                                                     <p>KRW 544,500</p>
                                                 </div>
-                                                <span><a href="reservation_detail">
-                                                    예약하기
+                                                <span><a href="reservation2">
+                                                    BOOK
                                                 </a></span>
                                             </span>
                                         </li>
@@ -930,7 +946,7 @@
                             <div class="reservation_roomsR">
                                 <h6>(1박/1객실)</h6>
                                 <p>KWR <span>430,000~</span></p>
-                                <span id="reservation_selection" onclick="POINT()">객실선택</span>
+                                <span id="reservation_selection" onclick="POINT()">SELECT</span>
                             </div>
                         </div>
                         <span class="rooms_content" id="rooms_content_3">
@@ -957,7 +973,7 @@
                                         <h6>(1박/1객실)</h6>
                                         <p>KWR <span>270,500~</span></p>
                                         <span id="reservation_selection" 
-                                        onclick="openCloseToc31()">요금보기</span>
+                                        onclick="openCloseToc31()">PRICE</span>
                                     </div>
                                 </li>
                                 <li id="option3-1" class="option">
@@ -1022,8 +1038,8 @@
                                                     <p>총 예상 금액</p>
                                                     <p>KRW 327,305</p>
                                                 </div>
-                                                <span><a href="reservation_detail">
-                                                    예약하기
+                                                <span><a href="reservation2">
+                                                    BOOK
                                                 </a></span>
                                             </span>
                                         </li>
@@ -1063,7 +1079,7 @@
                                         <h6>(1박/1객실)</h6>
                                         <p>KWR <span>280,500~</span></p>
                                         <span id="reservation_selection" onclick="openCloseToc32()">
-                                            요금보기
+                                            PRICE
                                         </span>
                                     </div>
                                 </li>
@@ -1129,8 +1145,8 @@
                                                     <p>총 예상 금액</p>
                                                     <p>KRW 339,405</p>
                                                 </div>
-                                                <span><a href="reservation_detail">
-                                                    예약하기
+                                                <span><a href="reservation2">
+                                                    BOOK
                                                 </a></span>
                                             </span>
                                         </li>
@@ -1160,7 +1176,7 @@
                                         <h6>(1박/1객실)</h6>
                                         <p>KWR <span>331,500~</span></p>
                                         <span id="reservation_selection" onclick="openCloseToc33()">
-                                            요금보기
+                                            PRICE
                                         </span>
                                     </div>
                                 </li>
@@ -1226,8 +1242,8 @@
                                                     <p>총 예상 금액</p>
                                                     <p>KRW 401,115</p>
                                                 </div>
-                                                <span><a href="reservation_detail">
-                                                    예약하기
+                                                <span><a href="reservation2">
+                                                    BOOK
                                                 </a></span>
                                             </span>
                                         </li>
@@ -1267,7 +1283,7 @@
                                         <h6>(1박/1객실)</h6>
                                         <p>KWR <span>430,000~</span></p>
                                         <span id="reservation_selection" onclick="openCloseToc34()">
-                                            요금보기
+                                            PRICE
                                         </span>
                                     </div>
                                 </li>
@@ -1333,8 +1349,8 @@
                                                     <p>총 예상 금액</p>
                                                     <p>KRW 544,500</p>
                                                 </div>
-                                                <span><a href="reservation_detail">
-                                                    예약하기
+                                                <span><a href="reservation2">
+                                                    BOOK
                                                 </a></span>
                                             </span>
                                         </li>

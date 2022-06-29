@@ -53,20 +53,29 @@
     margin-bottom: 100px;
 }
 .e_search_left{
+    width: calc(50% - 15px);
     display: inline-block;
     align-items: center;
     display: flex;
+    cursor: pointer;
+    justify-content: space-between;
 }
 .e_search_left>div{
     position: relative;
+    width: calc(50% - 10px);
 }
 .e_search_left>div>input{
+    width: 98%;
     border-left-width:0; 
     border-right-width:0; 
     border-top-width:0; 
-    border-bottom-width:1;
+    border-bottom-width: 0;
+    border-bottom: 1px solid rgb(118, 118, 118);
     font-size: 16px;
     padding-bottom: 8px;
+    cursor: pointer;
+    outline: none;
+    box-shadow: none;
 }
 .e_search_left>div>span{
     position: absolute;
@@ -76,22 +85,34 @@
     margin-right: 50px;
 }
 .e_seach_right{
-    display: inline-block;
+    display: flex;
+    width: calc(50% - 15px);
+    /* display: inline-block; */
+    justify-content: space-between;
 }
 .e_seach_right>input{
-    width: 520px;
+    width: 75%;
     text-align: left; 
     border-left-width:0; 
     border-right-width:0; 
     border-top-width:0; 
+    border-bottom-width: 0;
+    border-bottom: 1px solid rgb(118, 118, 118);
     font-size: 16px;
     padding-bottom: 8px;
+    outline: none;
+    box-shadow: none;
 }
-.e_seach_right>button{
-    background-color: #19344D;
+.e_seach_right>.e_search{
+    cursor: pointer;
+    background-color: #002453;
     padding:8px 30px;
     vertical-align: bottom;
     border: none;
+    border-radius: 2px;
+}
+.e_seach_right>.e_search:hover{
+    opacity: 0.9;
 }
 .e_seach_right>a{
     display: block;
@@ -138,6 +159,7 @@
     font-size: 14px;
     outline:none;
     margin-bottom: 20px;
+    cursor: pointer;
 }
 .figure_wrap{
     width: calc(100% + 30px);
@@ -160,7 +182,7 @@
     background-color: rgba(238, 236, 231, 50%);
     
 }
-.figure_wrap>figure>div>figcaption{
+.figure_wrap figcaption{
     font-size: 34px;
     margin-bottom: 8px;
     overflow: hidden;        
@@ -184,17 +206,25 @@
     margin-bottom: 100px;
 }
 .e_more>button{
-    display: block;
-    padding:8px 30px;
-    box-sizing: border-box;
-    margin: auto;
-    border: 1px solid #B0AFAF;
-    background-color: white;
     cursor: pointer;
+    display: block;
+    padding: 8px 30px;
+    box-sizing: border-box;
+    background-color: transparent;
+    color: #494949;
+    border: 1px solid rgb(118, 118, 118);
+    text-align: center;
+    border-radius: 3px;
+    transition: 0.3s;
+    margin: auto;
 }
 .e_more>button:hover{
-    opacity: 80%;
+    background-color: rgb(118, 118, 118);
+    color: #fff;
 }
+
+
+
 
 /***********sec4************/
 
@@ -306,8 +336,10 @@
         background-color: #EEECE7;
         border: none;
     }
+
     .e_seach_right>button>a{
         white-space: nowrap; /*같이 줄어들게 함*/
+ 
     }
     .e_date{
         margin-top: 30px;

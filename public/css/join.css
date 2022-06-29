@@ -158,14 +158,15 @@
   letter-spacing: 1px;
   padding: 8px 30px;
   box-sizing: border-box;
-  background-color: #19344D;
-  border: none;
-  color: #fff;
+  border: 1px solid rgb(118,118,118);
   cursor: pointer;
+  border-radius: 2px;
+  background-color: transparent;
 }
 
 .join_submit>input:hover {
-  opacity: 90%;
+  background-color: rgb(118,118,118);
+  color: #fff;
 }
 
 

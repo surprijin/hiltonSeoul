@@ -4,8 +4,11 @@
 
 .tea_wrap a{
     text-decoration: none;
-    color: black;
     letter-spacing: 1px;
+    color:#494949;
+}
+.tea_wrap a:hover{
+    color: white;
 }
 .tea_wrap p,.tea_wrap em,.tea_wrap h3{
     color:#494949;
@@ -23,7 +26,7 @@
 .event_img_tea{
     width: 100%;
     margin: auto;
-    background-image: url(../img/lidiya-pavlikova-y_gKWLrw3N4-unsplash.jpg);
+    background-image: url(../Img/lidiya-pavlikova-y_gKWLrw3N4-unsplash.jpg);
     background-repeat: no-repeat;
     background-size:cover;
 }
@@ -130,17 +133,25 @@
 }
 .e_detail_more>div{
     margin-top: 50px;
+    margin-bottom: 100px;
 }
 .e_detail_more>div>button{
+    cursor: pointer;
     display: block;
-    padding:8px 30px;
+    padding: 8px 30px;
     box-sizing: border-box;
+    background-color: transparent;
+    color: #494949;
+    border: 1px solid rgb(118, 118, 118);
+    text-align: center;
+    border-radius: 2px;
+    transition: 0.3s;
     margin: auto;
-    border: 1px solid #B0AFAF;
-    background-color: white;
 }
-
-
+.e_detail_more>div>button:hover{
+    color: #fff;
+    background-color: rgb(118, 118, 118);
+}
 
 
 

@@ -123,9 +123,12 @@ router.get("/manager", (req, res) => {
 });
 
 
+router.get('/reservation3', (req, res) => {
+  res.render("reservation3");
+});
 
-router.get("/reservation_detail", (req, res) => {
-  res.render("reservation_detail");
+router.get("/reservation2", (req, res) => {
+  res.render("reservation2");
 });
 
 router.get("/reservation", (req, res) => {
@@ -136,21 +139,57 @@ router.get("/room", (req, res) => {
   res.render("room");
 });
 
+router.get('/write', (req, res) => {
+  res.render("write");
+});
+
+router.get('/offer', (req, res) => {
+  res.render("offer");
+});
+
+router.get('/offerIn1', (req, res) => {
+  res.render("offerIn1");
+});
+
+router.get('/offerIn2', (req, res) => {
+  res.render("offerIn2");
+});
+
+router.get('/offerIn3', (req, res) => {
+  res.render("offerIn3");
+});
+
+router.get('/offerIn4', (req, res) => {
+  res.render("offerIn4");
+});
+
+router.get('/offerIn5', (req, res) => {
+  res.render("offerIn5");
+});
+
+router.get('/offerIn6', (req, res) => {
+  res.render("offerIn6");
+});
+
+router.get('/offerIn7', (req, res) => {
+  res.render("offerIn7");
+});
+
+
+
+///////////////////////////////////////////
 router.get("/notice", (req, res, next) => {
   db.getAllNotice((rows) => {
     res.render("notice", { rows: rows });
   });
 });
 
-
 router.get('/write', (req, res) => {
   res.render("write");
 });
 
-
-
 router.post('/hiltonWrite',
-  check('content').isLength({min: 1, max: 300}),
+  check('title').isLength({min: 1, max: 100000}),
   function(req, res, next) {
   let errs = validationResult(req);
   console.log(errs); //테스트 필요할 때 사용
@@ -180,9 +219,7 @@ router.get("/updatenoti", (req, res) => {
   });
 });
 
-router.post(
-  "/updatenoti",
-  [check("content").isLength({ min: 1, max: 300 })],
+router.post('/updatenoti',[check("title").isLength({ min: 1, max: 300 })],
   (req, res) => {
     let errs = validationResult(req);
     let param = JSON.parse(JSON.stringify(req.body));
@@ -196,7 +233,7 @@ router.post(
         res.render("updatenoti", { row: row[0], errs:errs["errors"] });
       });
     } else {
-      db.updateNoticeById(id, title, content,noticeItem, () => {
+      db.updateNoticeById(id,title,content,noticeItem, () => {
         res.redirect("/notice");
       });
     }
@@ -209,7 +246,6 @@ router.get("/deletenoti", (req, res) => {
     res.redirect("/notice");
   });
 });
-
 
 router.get("/manager", (req, res) => {
   res.render("manager");
@@ -226,5 +262,18 @@ router.get('/notice_deta', function(req, res) {
       }
   });
 });
+
+router.post("/login", function(req, res){
+  let param = JSON.parse(JSON.stringify(req.body));
+  let id = param['joinid'];
+  let pw = param['joinpw'];
+  db.getlogin(id, (row)=>{
+    if(typeof id === 'undefined' || row.length <= 0){
+      res.status(404).json({error:'undefind id'});
+  } else if(pw == row.pw) {
+    res.redirect("/");
+  }
+  })
+})
 
 module.exports = router;

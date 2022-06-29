@@ -44,11 +44,11 @@
       <span class="serch_ico"><a href=""></a></span>
     </span>
   </nav>
- 
-    <section class="notice_table">
+    <section class="notice_button">
       <button class="notice_table_manager" type="button" value="새작성"
-      onclick="javascript:location.href='/write'"
-      style="float: right">관리자 작성페이지</button>
+      onclick="javascript:location.href='/write'">관리자 작성페이지</button>
+    </section>  
+    <section class="notice_table">
       <ul>
           <li class="notice_table_top">
               <p style="width: 20%;">구분</p>
@@ -57,27 +57,20 @@
       </ul>
       <ul class="notice_table_body">
         <% rows.forEach((row, index)=>{ %>
-        <li onclick="javascript:location.href='/notice_deta?id=<%=row.id%>'">
-          <p>
+        <li class="tabcontent paging" onclick="javascript:location.href='/notice_deta?id=<%=row.id%>'">
+          <p class="noticeItem">
             <%= row.noticeItem%>
           </p>
           <p>
           <%= row.title%>
           </p>
-          <!-- <div class="noti_botton">
-            <input
-              type="button"
-              onclick="javascript:location.href='/updatenoti?id=<%=row.id%>'"
-              value="수정"
-            />
-            <input
-              type="button"
-              onclick="javascript:location.href='/deletenoti?id=<%=row.id%>'"
-              value="삭제"
-            />
-          </div> -->
          </li>
          <% }) %>
-         <script src="../js/notice.js"></script>
+
+         <nav aria-label="Page navigation example">
+          <ul class="pagination pagination-seperated "></ul>
+        </nav>
+
+         <script src="../js/notice.js"></script>  
   </section>
 </main>

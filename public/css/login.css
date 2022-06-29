@@ -50,7 +50,7 @@ main>.login_sec1440{
     
 }
 .member{
-    background-color: #19344D;
+    background-color: #002453;
     color: white;
 }
 
@@ -97,16 +97,18 @@ main>.login_sec1440{
     display: flex;
     align-items: center; 
 }
-.l_enter>a{
+.l_enter>button{
     position: relative;
     display: block;
     width: 100%;
-    background-color: #19344D;
+    background-color:#19344D;
     display: flex;
     justify-content: center;
     padding: 10px;
+    border: none;
+    cursor: pointer;
 }
-.l_enter>a>p{
+.l_enter>button>p{
     color: white;
 }
 .l_enter>a>span{
@@ -115,7 +117,6 @@ main>.login_sec1440{
     right: 1px;
     top: 10px;
 }
-
 .l_txt{
     display: flex;
     justify-content: center;
